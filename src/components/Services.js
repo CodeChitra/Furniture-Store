@@ -1,9 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
 import { services } from '../utils/constants'
+import { GiArtificialHive } from 'react-icons/gi'
 
 const Services = () => {
-  return <h4>services </h4>
+  return <Wrapper>
+    <div className="section-center">
+      <article className="header">
+        <h3>
+          Custome furniture <br />
+          built only for you
+        </h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quam tenetur placeat optio ipsum exercitationem veniam libero asperiores delectus sunt tempora eligendi a, est maiores neque aut rem vero repellat!</p>
+      </article>
+      <div className="services-center">
+        {services.map(({ id, icon, title, text }) => {
+          return <article key={id} className='service'>
+            <span className='icon'>{icon}</span>
+            <h4>{title}</h4>
+            <p>{text}</p>
+          </article>
+        })}
+      </div>
+    </div>
+  </Wrapper>
 }
 
 const Wrapper = styled.section`

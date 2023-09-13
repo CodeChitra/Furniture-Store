@@ -3,19 +3,36 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { FaCheck } from 'react-icons/fa'
 import { useCartContext } from '../context/cart_context'
+import { toast } from 'react-toastify';
 import AmountButtons from './AmountButtons'
 
 const AddToCart = ({ product }) => {
   const { addToCart } = useCartContext();
   const { stock, colors } = product;
-  console.log("Single Product: ", product);
   const [amount, setAmount] = useState(1);
   const [mainColor, setMainColor] = useState(colors[0]);
 
+  let isNotify = false;
   const increase = () => {
     setAmount(oldAmount => {
       let tempAmount = oldAmount + 1;
       if (tempAmount > stock) {
+        if (!isNotify) {
+          isNotify = true;
+          toast.info(`Only ${stock} items are left in the stock!`, {
+            position: "top-center",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          })
+          setTimeout(() => {
+            isNotify = false;
+          }, 4000)
+        };
         return stock;
       }
       return tempAmount;

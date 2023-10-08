@@ -7,7 +7,6 @@ export const UserProvider = ({ children }) => {
   const { loginWithRedirect, logout, user, } = useAuth0();
   const [myUser, setMyUser] = useState(null);
   useEffect(() => {
-    console.log("User: ", user);
     setMyUser(user)
   }, [user])
   return (

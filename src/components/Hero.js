@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import heroBcg from '../assets/hero-bcg.jpeg'
-import heroBcg2 from '../assets/hero-bcg-2.jpeg'
+import heroBcg from '../assets/hero-bcg.jpg'
+import heroBcg2 from '../assets/hero-bcg-2.jpg'
 
 const Hero = () => {
   return <Wrapper className='section-center'>
     <article className='content'>
       <h1>
-        desing your <br />
-        comfort zone
+        where charm <br />
+        meets furniture
       </h1>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At voluptate accusantium fuga dolor blanditiis placeat doloribus sed aliquam amet! Molestias?</p>
       <Link to="/products" className='btn hero-btn'>shop now</Link>

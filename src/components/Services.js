@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { services } from '../utils/constants'
-import { GiArtificialHive } from 'react-icons/gi'
+// import { GiArtificialHive } from 'react-icons/gi'
 
 const Services = () => {
   return <Wrapper>

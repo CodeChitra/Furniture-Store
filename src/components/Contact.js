@@ -18,6 +18,9 @@ const Contact = () => {
 }
 const Wrapper = styled.section`
   padding: 5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   h3 {
     text-transform: none;
   }

@@ -15,7 +15,7 @@ root.render(
 
     <Auth0Provider
         domain="dev-ourk8es48qk6sv3d.us.auth0.com"
-        clientId="eQtwi6Qf6fTTwHF67iOScMRkeMJQwqQM"
+        clientId={process.env.REACT_APP_AUTH_ID}
         authorizationParams={{
             redirect_uri: window.location.origin
         }}
